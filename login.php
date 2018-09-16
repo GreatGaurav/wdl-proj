@@ -15,7 +15,7 @@
             <form method="POST" id="loginForm">
                 <div class="form-group">
                     <p><label for="employeeID">Employee ID</label></p>
-                    <p><input type="id" class="form-control" id="employeeID" placeholder="Employee ID" autofocus></p>
+                    <p><input class="form-control" id="employeeID" placeholder="Employee ID" autofocus></p>
                 </div>
 
                 <div class="form-group">

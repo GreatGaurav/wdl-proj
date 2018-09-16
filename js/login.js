@@ -35,47 +35,32 @@ loginForm.addEventListener('submit', function(e) {
     }
 
     // Call server side code to log the employee in.
-    // 'log-employee.php' yet to be created.
     if (employeeID && employeePassword) {
         e.preventDefault();
         $.ajax({
-            url: '/log-employee.php',
+            url: 'log-employee.php',
             type: 'POST',
             dataType: 'json',
+            async: false,
             data: {functionname: 'login', arguments: [$('#employeeID').val(), $('#employeePassword').val()]},
         })
         .done(function(obj) {
-            res = JSON.parse(obj);
-
-            if (res['response']) {
-                alert('Sign in successful!');
-                console.log('Ya YEET!');
+            if (!('error' in obj)) {
+                console.log(obj.response);
+                alert('Sign in successful! Redirecting in 2s..');
+                window.setTimeout(function() {
+                    window.location.href = 'ind2.php';
+                }, 2000);
+            }
+            else if (obj.response == 'failure') {
+                alert('Entered ID or password is incorrect!');
             }
             else {
-                alert('OOPS! Something went wrong!');
-                console.log(obj.error);
+                console.log(obj.response, obj.error);
             }
         })
         .fail(function() {
-            alert('error!');
-        });
-
-        // $.ajax({
-        //     url: 'log-employee.php',
-        //     type: 'POST',
-        //     dataType: 'json',
-        //     data: {functionname: 'login', arguments: [$('#employeeID').val(), $('#employeePassword').val()]},
-        //     async: false,
-        //     success: function(obj, textstatus) {
-        //         if (!('error' in obj)) {
-        //             alert('Sign in successful!');
-        //             console.log('Ya YEET!')
-        //         }
-        //         else {
-        //             alert('OOPS! Something went wrong!')
-        //             console.log(obj.error);
-        //         }
-        //     }
-        // });  
+            alert('OOPS! Looks like something went wrong! Please try again');
+        }); 
     }
 });
