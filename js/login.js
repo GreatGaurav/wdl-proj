@@ -41,26 +41,30 @@ loginForm.addEventListener('submit', function(e) {
             url: 'log-employee.php',
             type: 'POST',
             dataType: 'json',
-            async: false,
             data: {functionname: 'login', arguments: [$('#employeeID').val(), $('#employeePassword').val()]},
         })
         .done(function(obj) {
             if (!('error' in obj)) {
-                console.log(obj.response);
-                alert('Sign in successful! Redirecting in 2s..');
-                window.setTimeout(function() {
-                    window.location.href = 'ind2.php';
-                }, 2000);
-            }
-            else if (obj.response == 'failure') {
-                alert('Entered ID or password is incorrect!');
-            }
-            else {
-                console.log(obj.response, obj.error);
+                if (obj.response == 'success') {
+                    // console.log(obj.response);
+                    alert('Sign in successful! Redirecting in 2s..');
+                    window.setTimeout(function() {
+                        window.location.href = 'ind2.php';
+                    }, 2000);
+                }
+                if (obj.response == 'failure') {
+                    alert('Entered ID or password is incorrect!');
+                }
+                else if (obj.response == 'first_redirect') {
+                    window.location.href = 'first-signup.php';
+                }
+                else {
+                    console.log(obj.response, obj.error);
+                }
             }
         })
         .fail(function() {
-            alert('OOPS! Looks like something went wrong! Please try again');
+            alert('OOPS! Looks like something went wrong! Please try again..');
         }); 
     }
 });

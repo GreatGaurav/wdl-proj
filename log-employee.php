@@ -14,20 +14,22 @@
     if (!isset($response['error'])) {
         switch ($_POST['functionname']) {
             case 'login':
+                // $response['response'] = 'So Far so good!';
                 $servername = 'localhost';
                 $username = 'root';
                 $password = NULL;
                 $dbname = 'Automobile Dealrship';
+                $table = 'Employee';
 
                 if (!($conn = mysqli_connect($servername, $username, $password))) {
-                    die("Failed to connect to MySQL Database Sever - #".mysqli_errno($conn).": ".mysqli_error($conn));
+                    $response['error'] = "Failed to connect to MySQL Database Sever - #".mysqli_errno($conn).": ".mysqli_error($conn);
                 }
 
                 if (!mysqli_select_db($conn, $dbname)) {
-                    die("Connected to server, but failed to connect to database - #".mysqli_errno($conn).": ".mysqli_error($conn));
+                    $response['error'] = "Connected to server, but failed to connect to database - #".mysqli_errno($conn).": ".mysqli_error($conn);
                 }
 
-                $query = "SELECT password FROM $dbname WHERE emp_id = $_POST['arguments'][0]";
+                $query = "SELECT password FROM ".$table." WHERE emp_id = ".$_POST['arguments'][0]." LIMIT 1";
 
                 if (!($select_res = mysqli_query($conn, $query))) {
                     $response['response'] = "Retrieval of data from Database Failed - #".mysqli_errno($conn).": ".mysqli_error($conn);
@@ -37,13 +39,15 @@
                         $response['response'] = "No rows returned";
                     }
                     else {
-                        $pass = mysqli_fetch($select_res);
+                        $pass = mysqli_fetch_object($select_res);
 
-                        if ($pass == NULL) {
+                        if ($pass->password == NULL) {
                             // TODO: Redirect user to a first time sign in page to change the password if the password field is NULL.
-                            header('Location: first-signup.php');
+                            $response['response'] = 'first_redirect';
+                            // header('Location: first-signup.php');
                         }
                         else {
+                            // $response['response'] = 'Marker';
                             $obtained_id = $_POST['arguments'][0];
                             $obtained_password = $_POST['arguments'][1];
 
