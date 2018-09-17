@@ -9,7 +9,7 @@ loginForm.addEventListener('submit', function(e) {
     if (!$('#employeeID').val()) {
         // Add a line when ID field is empty.
         if($('#employeeID').parent().next('.validation').length == 0) {
-            $('#employeeID').parent().after('<div class="validation" style="color: red; margin-bottom: 20px;">Please enter your ID</div>');
+            $('#employeeID').parent().after('<div class="validation" style="color: red; margin-bottom: 20px;">Please enter your ID.</div>');
         }
         e.preventDefault();  // Prevent POST to server.
         // Focus on ID field if ID is not present.
@@ -24,7 +24,7 @@ loginForm.addEventListener('submit', function(e) {
     // Perform the same checks for the password field.
     if (!$('#employeePassword').val()) {
         if($('#employeePassword').parent().next('.validation').length == 0) {
-            $('#employeePassword').parent().after('<div class="validation" style="color: red; margin-bottom: 20px;">Please enter your password</div>');
+            $('#employeePassword').parent().after('<div class="validation" style="color: red; margin-bottom: 20px;">Please enter your password.</div>');
         }
         e.preventDefault();
         $('#employeePassword').focus();
@@ -57,6 +57,9 @@ loginForm.addEventListener('submit', function(e) {
                 }
                 else if (obj.response == 'first_redirect') {
                     window.location.href = 'first-signup.php';
+                }
+                else if (obj.response == 'No rows returned') {
+                    $('#employeeID').parent().after('<div class="validation" style="color: red; margin-bottom: 20px;">Entered ID does not exist.</div>');
                 }
                 else {
                     console.log(obj.response, obj.error);
