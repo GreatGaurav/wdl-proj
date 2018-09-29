@@ -49,7 +49,7 @@ loginForm.addEventListener('submit', function(e) {
                     // console.log(obj.response);
                     alert('Sign in successful! Redirecting in 2s..');
                     window.setTimeout(function() {
-                        window.location.href = 'ind2.php';
+                        window.location.href = 'index.php';
                     }, 2000);
                 }
                 if (obj.response == 'failure') {
@@ -65,9 +65,13 @@ loginForm.addEventListener('submit', function(e) {
                     console.log(obj.response, obj.error);
                 }
             }
+            else {
+                console.log(obj.error);
+            }
         })
-        .fail(function() {
+        .fail(function(obj) {
             alert('OOPS! Looks like something went wrong! Please try again..');
+            console.log(obj.error, obj.response);
         }); 
     }
 });
