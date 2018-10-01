@@ -5,8 +5,6 @@
 
     $response = array();
 
-    session_start();
-
     if (!isset($_POST['functionname'])) {
         $response['error'] = 'No function name passed!';
     }
@@ -18,6 +16,12 @@
     if (!isset($response['error'])) {
         switch ($_POST['functionname']) {
             case 'login':
+                if (isset($_SESSION)) {
+                    session_destroy();
+                }
+
+                session_start();
+
                 // TODO: Common function for database connectivity and query execution.
                 $servername = 'localhost';
                 $username = 'root';

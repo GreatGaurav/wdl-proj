@@ -52,7 +52,7 @@ passwordForm.addEventListener('submit', function(e) {
                     console.log(obj.response, obj.emp_id);
                     alert('Sign in successful! Redirecting in 2s..');
                     window.setTimeout(function() {
-                        window.location.href = '/index.php';
+                        window.location.href = '../index.php?login=success';
                     }, 2000);
                 }
             }

@@ -49,7 +49,7 @@ loginForm.addEventListener('submit', function(e) {
                     // console.log(obj.response);
                     alert('Sign in successful! Redirecting in 2s..');
                     window.setTimeout(function() {
-                        window.location.href = '../index.php';
+                        window.location.href = '../index.php?login=success';
                     }, 2000);
                 }
                 if (obj.response == 'failure') {
