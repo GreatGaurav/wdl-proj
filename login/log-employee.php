@@ -49,6 +49,7 @@
                         $pass = mysqli_fetch_object($select_res);
 
                         if ($pass->password == NULL) {
+                            $_SESSION['employeeID'] = $_POST['arguments'][0];
                             $response['response'] = 'first_redirect';
                             // header('Location: first-signup.php');
                         }
@@ -56,7 +57,7 @@
                             $obtained_id = $_POST['arguments'][0];
                             $obtained_password = $_POST['arguments'][1];
 
-                            if (password_verify($obtained_password, $pass)) {
+                            if (password_verify($obtained_password, $pass->password)) {
                                 $_SESSION['employeeID'] = $_POST['arguments'][0];
                                 $response['response'] = 'success';
                             }
@@ -93,17 +94,18 @@
 
                 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-                $query = "INSERT INTO Employee (password) VALUES ('".$hashed_password."')";
+                $query = "UPDATE ".$table." SET password = '".$hashed_password."' WHERE emp_id = ".$_GET['id']."";
 
                 if (!(mysqli_query($conn, $query))) {
                     $response['error'] = "Failed to change password.";
+                    break;
                 }
                 else {
                     $_SESSION['employeeID'] = $_POST['arguments'][0];
                     $response['response'] = 'success';
                 }
 
-
+                break;
 
             default:
                 $response['error'] = 'Function "'.$_POST['functionname'].'" not found!';

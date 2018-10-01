@@ -14,7 +14,7 @@
         <?php
             session_start();
 
-            if (isset($_SESSION['employeeID'])) {
+            if (isset($_SESSION['employeeID']) && $_GET['type'] == 'first') {
         ?>
             <div class="alert alert-primary" role="alert">
                 Looks like you have not set your password yet. Do it now!
@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="form-group">
-                        <p><label for="employeePassword">Confirm Your Password</label></p>
+                        <p><label for="confirmPassword">Confirm Your Password</label></p>
                         <p><input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password"></p>
                     </div>
 

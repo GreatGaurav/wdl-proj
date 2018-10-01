@@ -16,7 +16,7 @@
                 <a href="fetch.php" class="nav-link">Bikes</a>
             </li>
             <li class="nav-item">
-                <a href="./login/login.php" class="nav-link">Login</a>
+                <a href="./login/index.php" class="nav-link">Login</a>
             </li>
         </ul>
     </div>

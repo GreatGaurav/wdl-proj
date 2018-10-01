@@ -5,6 +5,9 @@ passwordForm.addEventListener('submit', function(e) {
     var passwordField = false;
     var confPasswordField = false;
 
+    let urlParams = new URLSearchParams(window.location.search);
+    let emp_id = urlParams.get('id');
+
     // Check if ID is present.
     if (!$('#password').val()) {
         // Add a line when ID field is empty.
@@ -34,21 +37,22 @@ passwordForm.addEventListener('submit', function(e) {
         confPasswordField = true;
     }
 
-    if ((passwordField && confPasswordField) && ($('#password').val() === $('#confirmPassword'))) {
+    if ((passwordField && confPasswordField) && ($('#password').val() == $('#confirmPassword').val())) {
         e.preventDefault();
 
         $.ajax({
-            url: 'log-employee.php',
+            url: 'log-employee.php?id=' + emp_id,
             type: 'POST',
             dataType: 'json',
-            data: {functionname: 'set-password', argument: [$('#employeeID').val(), $('#password').val()]},
+            data: {functionname: 'set-password', arguments: [$('#employeeID').val(), $('#password').val()]},
         })
         .done(function(obj) {
             if (!('error' in obj)) {
                 if (obj.response == 'success') {
+                    console.log(obj.response, obj.emp_id);
                     alert('Sign in successful! Redirecting in 2s..');
                     window.setTimeout(function() {
-                        window.location.href = 'index.php';
+                        window.location.href = '/index.php';
                     }, 2000);
                 }
             }
@@ -58,7 +62,11 @@ passwordForm.addEventListener('submit', function(e) {
         })
         .fail(function(obj) {
             console.log(obj.response, obj.error);
-        });
-        
+            alert('OOPS! Looks like something went wrong! Please try again..');
+
+        });   
+    }
+    else {
+        alert("The passwords entered do not match!");
     }
 });

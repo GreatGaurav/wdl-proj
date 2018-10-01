@@ -49,14 +49,14 @@ loginForm.addEventListener('submit', function(e) {
                     // console.log(obj.response);
                     alert('Sign in successful! Redirecting in 2s..');
                     window.setTimeout(function() {
-                        window.location.href = 'index.php';
+                        window.location.href = '../index.php';
                     }, 2000);
                 }
                 if (obj.response == 'failure') {
                     alert('Entered ID or password is incorrect!');
                 }
                 else if (obj.response == 'first_redirect') {
-                    window.location.href = 'first-signup.php';
+                    window.location.href = 'first-signup.php?type=first&id=' + $('#employeeID').val();
                 }
                 else if (obj.response == 'No rows returned') {
                     $('#employeeID').parent().after('<div class="validation" style="color: red; margin-bottom: 20px;">Entered ID does not exist.</div>');
