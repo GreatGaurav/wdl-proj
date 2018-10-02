@@ -1,9 +1,9 @@
 <?php 
-    include('dbh.php');
+    include('../dbh.php');
     
     session_start();
 
-     $sql = "SELECT * FROM two_wheeler";
+     $sql = "SELECT * FROM four_wheeler";
     
 
      $var = $conn->query($sql);
@@ -16,6 +16,7 @@
 ?>
 	
 	<?php 
+
         $mod2 = "SELECT * FROM manufacturer, automobile WHERE automobile.chassis_no = '".$row['chassis_no']."' AND automobile.m_id = manufacturer.m_id";
         $sql2 = mysqli_query($conn, $mod2);
         if (!$sql2) {
@@ -23,8 +24,7 @@
             exit();
         }
         $row2 = mysqli_fetch_array($sql2, MYSQLI_ASSOC);
-
-        include('bike.php'); 
+        include('car.php'); 
 	?>
 
 <?php endwhile; ?>
