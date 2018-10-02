@@ -28,8 +28,8 @@
     <h5>Name: <?=$row['name'] ;?></h5>
     <h5>License Number :<?=$row['license_no'] ;?></h5>
     <div class="separator"></div>
-     <b>Pancard Number :</b> <?=$row['pan_no'] ;?><br>
-     <b>Address :</b> <?=$row['address'] ;?><br>
+     <b>Vehicle :</b> <?=$row['vehicle'] ;?><br>
+
 
   </div>
 </div>

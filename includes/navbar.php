@@ -37,7 +37,7 @@
                         <a href="#" class="nav-link dropdown-toggle" id="navbarDropdowmMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                             <a href="http://localhost/wdl-proj/Customer/customer.php" class="dropdown-item">Your Customers</a>
-                            <a href="#" class="dropdown-item">View Orders</a>
+                            <a href="http://localhost/wdl-proj/Orders/order.php" class="dropdown-item">View Orders</a>
                             <a href="#" class="dropdown-item">Check Stocks</a>
                         </div>
                     </li>
