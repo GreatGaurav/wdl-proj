@@ -3,16 +3,11 @@
     
     session_start();
 
-     $sql = "SELECT * FROM two_wheeler";
-    
+    $sql = "SELECT * FROM two_wheeler";
 
-     $var = $conn->query($sql);
+    $var = $conn->query($sql);
 
-     
-
-
-
-     while ($row = mysqli_fetch_array($var, MYSQLI_ASSOC)) :
+    while ($row = mysqli_fetch_array($var, MYSQLI_ASSOC)) :
 ?>
 	
 	<?php 
@@ -27,4 +22,4 @@
         include('bike.php'); 
 	?>
 
-<?php endwhile; ?>
+    <?php endwhile; ?>

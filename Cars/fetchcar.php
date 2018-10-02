@@ -5,12 +5,7 @@
 
      $sql = "SELECT * FROM four_wheeler";
     
-
      $var = $conn->query($sql);
-
-     
-
-
 
      while ($row = mysqli_fetch_array($var, MYSQLI_ASSOC)) :
 ?>
