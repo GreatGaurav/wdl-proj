@@ -10,33 +10,35 @@
         <title>First Login - Automobile Dealership</title>
     </head>
     <body>
-        <?php include '../navbar.php'; ?>
+        <?php include '../includes/navbar.php'; ?>
 
         <?php
-            session_start();
+            // session_start();
 
-            if (isset($_SESSION['employeeID']) && $_GET['type'] == 'first') {
+            if (isset($_SESSION['employeeID']) && isset($_GET['type'])) {
+                if ($_GET['type'] == 'first') {
         ?>
-            <div class="alert alert-primary" role="alert">
-                Looks like you have not set your password yet. Do it now!
-            </div>
-
-            <div class="container mx-auto mt-3">
-                <form method="POST" id="passwordForm">
-                    <div class="form-group">
-                        <p><label for="password">Enter Your Password</label></p>
-                        <p><input type="password" class="form-control" id="password" placeholder="Password" autofocus></p>
+                    <div class="alert alert-primary" role="alert">
+                        Looks like you have not set your password yet. Do it now!
                     </div>
 
-                    <div class="form-group">
-                        <p><label for="confirmPassword">Confirm Your Password</label></p>
-                        <p><input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password"></p>
-                    </div>
+                    <div class="container mx-auto mt-3">
+                        <form method="POST" id="passwordForm">
+                            <div class="form-group">
+                                <p><label for="password">Enter Your Password</label></p>
+                                <p><input type="password" class="form-control" id="password" placeholder="Password" autofocus></p>
+                            </div>
 
-                    <button type="submit" class="btn btn-secondary">Submit</button>
-                </form>
-            </div>
+                            <div class="form-group">
+                                <p><label for="confirmPassword">Confirm Your Password</label></p>
+                                <p><input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password"></p>
+                            </div>
+
+                            <button type="submit" class="btn btn-secondary">Submit</button>
+                        </form>
+                    </div>
         <?php 
+                }
             }
             else {
         ?>

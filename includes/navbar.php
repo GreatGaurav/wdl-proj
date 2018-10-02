@@ -34,6 +34,14 @@
                                 <i class="fas fa-sign-out-alt"></i>
                             </a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdowmMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                <a href="#" class="dropdown-item">Your Customers</a>
+                                <a href="#" class="dropdown-item">View Orders</a>
+                                <a href="#" class="dropdown-item">Check Stocks</a>
+                            </div>
+                        </li>
             <?php 
                     }
                 }

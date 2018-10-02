@@ -10,7 +10,7 @@
         <title>Employee login - Automobile Dealership</title>
     </head>
     <body>
-        <?php include '../navbar.php'; ?>
+        <?php include '../includes/navbar.php'; ?>
 
         <div class="container mx-auto mt-3">
             <form method="POST" id="loginForm">
