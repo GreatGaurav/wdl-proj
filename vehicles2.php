@@ -10,36 +10,37 @@
       <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/all.css">
   
 </head>
 
 <body>
 
-<?php include_once('navbar.php'); 
-
-?>
+<?php include('includes/navbar.php'); ?>
 <?php include('dbh.php'); ?>
 
 
 
 <div class="card">
-  <div class="thumbnail"><img class="left" src="<?php echo $row['image'] ;?>"/></div>
+  <div class="thumbnail"><img class="left" src="<?php echo $row2['image'] ;?>"/></div>
   <div class="right">
-    <h5>Car Name</h5>
-    <h5>Price</h5>
+    <h5><?=$row2['name'] ;?></h5>
+    <h5><?=$row2['price'] ;?></h5>
     <div class="author"><img src="https://randomuser.me/api/portraits/men/95.jpg"/>
       <h6>Manufacturer</h6>
     </div>
     <div class="separator"></div>
-     <b>Chasis No :</b> <?=$row['chasis_no'] ;?><br>
-     <b>Mileage   :</b><?=$row['mileage'] ;?><br>
-     <b>Storage   :</b><?=$row['storage'] ;?><br>
-     <b>Model     :</b><?=$row2['model'] ;?><br>
+     <b>Chasis No :</b> <?=$row2['chassis_no'] ;?><br>
+     <b>Mileage   :</b><?=$row2['mileage'] ;?><br>
+
   </div>
 </div>
   
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/all.js"></script>
     <script src="js/index.js"></script>
 
 </body>

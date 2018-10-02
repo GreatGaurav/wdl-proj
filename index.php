@@ -10,7 +10,10 @@
 	<title>Automobile Dealership</title>
 </head>
 <body>
-	<?php include 'includes/navbar.php'; ?>
+	<?php 
+        session_start();
+        include 'includes/navbar.php';
+    ?>
     
     <div class="mx-auto">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

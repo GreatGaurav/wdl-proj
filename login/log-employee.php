@@ -26,8 +26,8 @@
                 $servername = 'localhost';
                 $username = 'root';
                 $password = NULL;
-                $dbname = 'Automobile Dealrship';
-                $table = 'Employee';
+                $dbname = 'automobiledealership';
+                $table = 'employee';
                 // $response['response'] = 'Marker';
 
                 if (!($conn = mysqli_connect($servername, $username, $password))) {
@@ -40,7 +40,7 @@
                     break;
                 }
 
-                $query = "SELECT password FROM ".$table." WHERE emp_id = ".$_POST['arguments'][0]." LIMIT 1";
+                $query = "SELECT password FROM ".$table." WHERE emp_id = '".$_POST['arguments'][0]."' LIMIT 1";
 
                 if (!($select_res = mysqli_query($conn, $query))) {
                     $response['error'] = "Retrieval of data from Database Failed - #".mysqli_errno($conn).": ".mysqli_error($conn);
@@ -81,8 +81,8 @@
                 $servername = 'localhost';
                 $username = 'root';
                 $password = NULL;
-                $dbname = 'Automobile Dealrship';
-                $table = 'Employee';
+                $dbname = 'automobiledealership';
+                $table = 'employee';
 
                 if (!($conn = mysqli_connect($servername, $username, $password))) {
                     $response['error'] = "Failed to connect to MySQL Database Sever - #".mysqli_errno($conn).": ".mysqli_error($conn);
@@ -98,7 +98,7 @@
 
                 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-                $query = "UPDATE ".$table." SET password = '".$hashed_password."' WHERE emp_id = ".$_GET['id']."";
+                $query = "UPDATE ".$table." SET password = '".$hashed_password."' WHERE emp_id = '".$_GET['id']."'";
 
                 if (!(mysqli_query($conn, $query))) {
                     $response['error'] = "Failed to change password.";

@@ -17,11 +17,10 @@
 	
 	<?php 
 
-		$mod = "SELECT * FROM AUTOMOBILE WHERE chasis_no = '".$row['chasis_no']."'";
+		$mod = "SELECT * FROM two_wheeler WHERE chassis_no = '".$row['chassis_no']."'";
         $sql = mysqli_query($conn, $mod);
         $row2 = mysqli_fetch_assoc($sql);
         include('vehicles2.php'); 
 	?>
 
-<?php echo $row2['model']; ?>
 <?php endwhile; ?>

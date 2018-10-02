@@ -13,7 +13,7 @@
         <?php include '../includes/navbar.php'; ?>
 
         <?php
-            // session_start();
+            session_start();
 
             if (isset($_SESSION['employeeID']) && isset($_GET['type'])) {
                 if ($_GET['type'] == 'first') {

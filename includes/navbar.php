@@ -24,7 +24,7 @@
                 </a>
             </li>
             <?php
-                session_start(); 
+                // session_start(); 
                 if (isset($_SESSION['employeeID']) && isset($_GET['login'])) {
                     if ($_GET['login'] == 'success') {
             ?>
