@@ -12,13 +12,13 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="fetchcar.php" class="nav-link">
                     Cars
                     <i class="fas fa-car"></i>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="fetch.php" class="nav-link">
+                <a href="fetchbike.php" class="nav-link">
                     Bikes
                     <i class="fas fa-motorcycle"></i>
                 </a>

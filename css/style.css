@@ -73,16 +73,18 @@ img.left {
 
 }
 
-h5, h6 {
+.right h5, h6 {
 /*  padding-top: 15px;*/
   font-size: 1.3rem;
   color: #4B4B4B;
+  font-weight: bold; !important 
+  /*font-color: red;*/
 }
 
 .author {
   background-color: #9ECAFF;
   height: 30px;
-  width: 110px;
+  width: 220px;
   border-radius: 20px;
 }
 

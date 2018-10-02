@@ -23,16 +23,16 @@
 
 
 <div class="card">
-  <div class="thumbnail"><img class="left" src="<?php echo $row2['image'] ;?>"/></div>
+  <div class="thumbnail"><img class="left" src="<?php echo "data:image/jpg;base64,".base64_encode($row['image'])."";?>"/></div>
   <div class="right">
-    <h5><?=$row2['name'] ;?></h5>
-    <h5><?=$row2['price'] ;?></h5>
+    <h5><?=$row['name'] ;?></h5>
+    <h5><?=$row['price'] ;?> Lakhs</h5>
     <div class="author"><img src="https://randomuser.me/api/portraits/men/95.jpg"/>
-      <h6>Manufacturer</h6>
+      <h6><?=$row2['name'] ;?></h6>
     </div>
     <div class="separator"></div>
-     <b>Chasis No :</b> <?=$row2['chassis_no'] ;?><br>
-     <b>Mileage   :</b><?=$row2['mileage'] ;?><br>
+     <b>Mileage             :</b> <?=$row['mileage'] ;?> kmpl<br>
+     <b>Engine Capacity     :</b> <?=$row['engine_capacity'] ;?> cc<br>
 
   </div>
 </div>
