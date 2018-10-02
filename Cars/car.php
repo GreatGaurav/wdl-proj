@@ -12,7 +12,7 @@
     </head>
 
     <body>
-        <?php include('../includes/navbar.php'); ?>
+        <?php include_once('../includes/navbar.php'); ?>
         <?php include('../dbh.php'); ?>
 
         <div class="card">
