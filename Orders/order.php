@@ -12,6 +12,9 @@
             printf("Error: %s\n", mysqli_error($conn));
             exit();
         }
+        if (mysqli_num_rows($var) == 0) {
+                        include_once('justheader.php');
+        }
 
      	while ($row = mysqli_fetch_array($var, MYSQLI_ASSOC)) :
      			include('orderdisplay.php');	

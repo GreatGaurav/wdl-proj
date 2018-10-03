@@ -16,24 +16,10 @@
 </head>
 
 <body style="background-color: #778899;">
-
 <?php include_once('../includes/navbar.php'); ?>
-<?php include('../dbh.php'); ?>
 
+	<h1 style="text-align: center;">No Orders placed by the Customer yet!</h1>
 
-
-<div class="card">
-  <div class="thumbnail"><img class="left" src="<?php echo "data:image/jpg;base64,".base64_encode($row['image'])."";?>"/></div>
-  <div class="right">
-    <h5>Name: <?=$row['name'] ;?></h5>
-    <h5>License Number :<?=$row['license_no'] ;?></h5>
-    <div class="separator"></div>
-     <b>Pancard Number :</b> <?=$row['pan_no'] ;?><br>
-     <b>Address :</b> <?=$row['address'] ;?><br>
-
-  </div>
-</div>
-  
     <script src="../js/jquery-3.3.1.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>

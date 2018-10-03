@@ -15,7 +15,7 @@
   
 </head>
 
-<body>
+<body style="background-color: #778899;">
 
 <?php include_once('../includes/navbar.php'); ?>
 <?php include('../dbh.php'); ?>

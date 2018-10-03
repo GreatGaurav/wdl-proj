@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="../css/all.css">  
     </head>
 
-    <body>
+    <body style="background-color: #778899;">
 
         <?php include_once('../includes/navbar.php'); ?>
         <?php include('../dbh.php'); ?>
@@ -35,6 +35,5 @@
         <script src="../js/bootstrap.min.js"></script>
         <script src="../js/all.js"></script>
         <script src="../js/index.js"></script>
-
     </body>
 </html>
