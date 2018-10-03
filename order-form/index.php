@@ -65,7 +65,7 @@
                         <input type="text" class="form-control" id="employeeID" name="employeeID" placeholder="<?php echo $_SESSION['employeeID'] ?>" readonly>
                     </div>
 
-                    <button type="submit" class="btn btn-outline-secondary">Submit</button>
+                    <button type="submit" id="submitButton" name="submitButton" class="btn btn-outline-secondary">Submit</button>
                 </form>
             </div>
         <?php

@@ -12,6 +12,24 @@ $(document).ready(function(){
 
         $('#customerAge').attr('placeholder', age);
     });
+
+    $('#submitButton').click(function() {
+        var image_name = $('#customerPhoto').val();
+
+        if (image_name == '') {
+            alert("Please select an image");
+            return false;
+        }
+        else {
+            var extension = $('#customerPhoto').val().split('.').pop().toLowerCase();
+
+            if ($.inArray(extension, ['gif', 'png', 'jpg', 'jpeg']) == -1) {
+                alert('Invalid Image File.');
+                $('#customerPhoto').val('');
+                return false;
+            }
+        }
+    });
 });
 
 function readURL(input) {
