@@ -38,7 +38,7 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                             <a href="http://localhost/wdl-proj/Customer/customer.php" class="dropdown-item">Your Customers</a>
                             <a href="http://localhost/wdl-proj/Orders/order.php" class="dropdown-item">View Orders</a>
-                            <a href="#" class="dropdown-item">Check Stocks</a>
+                            <a href="http://localhost/wdl-proj/order-form/" class="dropdown-item">Add a new customer</a>
                         </div>
                     </li>
             <?php 
