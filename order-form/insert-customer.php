@@ -19,7 +19,15 @@
 
     if ($check !== false) {
         $image = $_FILES['customerPhoto']['tmp_name'];
-    }
+        $imgContent = addslashes(file_get_contents($image));
 
-    $query = "INSERT INTO ".$table." VALUES ('".$_POST['customerLicenseNo']."', '".$_POST['customerName']."', '".$_POST['customerDOB']."', ".$_POST['customerAge'].", '".$_POST['customerPanNo']."', '".$_POST['customerContact']."', '".$_POST['customerAddress']."', '".$_POST['employeeID']."', "..")"
+        $query = "INSERT INTO ".$table." VALUES ('".$_POST['customerLicenseNo']."', '".$_POST['customerName']."', '".$_POST['customerDOB']."', ".$_POST['customerAge'].", '".$_POST['customerPanNo']."', '".$_POST['customerContact']."', '".$_POST['customerAddress']."', '".$_POST['employeeID']."', ".$imgContent.")"
+
+        if (!mysqli_query($conn, $query)) {
+            echo "Failed to upload data.";
+        }
+        else {
+            echo "Data uploaded."
+        }
+    }
 ?>
