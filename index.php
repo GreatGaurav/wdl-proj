@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="images/car2.jpg" alt="">
+                    <img class="d-block w-100" src="images/car5.jpg" alt="">
                 </div>
 
                 <div class="carousel-item">
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="images/car4.jpg" alt="">
+                    <img class="d-block w-100" src="images/car6.jpg" alt="">
                 </div>
             </div>
 
