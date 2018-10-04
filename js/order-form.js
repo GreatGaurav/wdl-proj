@@ -10,7 +10,7 @@ $(document).ready(function(){
         var age = Math.floor((today - dob) / (365.25 * 24 * 60 * 60 * 1000));
         console.log(age, typeof age);
 
-        $('#customerAge').attr('placeholder', age);
+        $('#customerAge').attr('value', age);
     });
 
     $('#submitButton').click(function() {

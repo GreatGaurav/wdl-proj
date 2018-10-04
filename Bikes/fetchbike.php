@@ -19,7 +19,7 @@
         }
         $row2 = mysqli_fetch_array($sql2, MYSQLI_ASSOC);
 
-        include('bike.php'); 
+        include_once('bike.php'); 
 	?>
 
     <?php endwhile; ?>

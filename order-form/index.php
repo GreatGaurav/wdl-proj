@@ -18,7 +18,7 @@
             <div class="container mx-auto mb-4">
                 <h1>Customer Form</h1>
 
-                <form action="insert-customer.php" id="orderForm" method="POST">
+                <form action="insert-customer.php" id="orderForm" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="customerName">Name of the customer</label>
                         <input type="text" class="form-control" id="customerName" name="customerName" placeholder="Enter name of the customer" autofocus>
@@ -62,7 +62,7 @@
 
                     <div class="form-group">
                         <label for="employeeID">Your ID</label>
-                        <input type="text" class="form-control" id="employeeID" name="employeeID" placeholder="<?php echo $_SESSION['employeeID'] ?>" readonly>
+                        <input type="text" class="form-control" id="employeeID" name="employeeID" value="<?php echo $_SESSION['employeeID'] ?>" readonly>
                     </div>
 
                     <button type="submit" id="submitButton" name="submitButton" class="btn btn-outline-secondary">Submit</button>

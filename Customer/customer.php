@@ -9,7 +9,7 @@
       	$var = $conn->query($sql);
 
      	while ($row = mysqli_fetch_array($var, MYSQLI_ASSOC)) :
-     			include('customerdisplay.php');	
+     			include_once('customerdisplay.php');	
 
 
      	endwhile;

@@ -19,7 +19,7 @@
             exit();
         }
         $row2 = mysqli_fetch_array($sql2, MYSQLI_ASSOC);
-        include('car.php'); 
+        include_once('car.php'); 
 	?>
 
 <?php endwhile; ?>
